@@ -60,6 +60,7 @@
             this.bntListarContactables.TabIndex = 2;
             this.bntListarContactables.Text = "Listado Contactables";
             this.bntListarContactables.UseVisualStyleBackColor = true;
+            this.bntListarContactables.Click += new System.EventHandler(this.bntListarContactables_Click);
             // 
             // Form1
             // 

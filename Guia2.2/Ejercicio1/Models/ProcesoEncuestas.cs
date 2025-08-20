@@ -9,9 +9,21 @@ namespace Ejercicio1.Models
     internal class ProcesoEncuestas
     {
         public int CantContactables { get; private set; }
-        public double PorcBicicleta { get { return PorcBicicleta / contactables.Count; } private set { } }
-        public double PorcAuto { get { return PorcAuto / contactables.Count; } private set { } }
-        public double PorcTrasporteP { get { return PorcTrasporteP / contactables.Count; } private set { }}
+        public double PorcBicicleta { 
+            
+            get
+            { 
+                if(contactables.Count > 0)
+                {
+                    return PorcBicicleta / contactables.Count; 
+
+                }
+                return 0;
+
+            } 
+            private set { } }
+        public double PorcAuto { get { if (contactables.Count > 0) { return PorcAuto / contactables.Count; } return 0;  } private set { } }
+        public double PorcTrasporteP { get { if (contactables.Count > 0) { return PorcTrasporteP / contactables.Count; } return  0; } private set { }}
 
         List<Encuesta> contactables = new List<Encuesta>();
 
@@ -20,11 +32,6 @@ namespace Ejercicio1.Models
         public void RegistrarEcuentas( Encuesta unaEncuesta , bool puedeSerContactado) {
 
 
-            if (puedeSerContactado)
-            {
-                CantContactables++;
-                
-            }
 
 
             if (unaEncuesta.UsaBicicleta) PorcBicicleta++;
@@ -32,8 +39,13 @@ namespace Ejercicio1.Models
             if (unaEncuesta.UsaTransportePublico) PorcTrasporteP++;
 
 
+            if (puedeSerContactado) // segun entiendo, solo agregamos a la lista lo que son contactables
+            {
 
-            contactables.Add(unaEncuesta );
+                CantContactables++;
+                contactables.Add(unaEncuesta);
+            }
+
 
         }
 
