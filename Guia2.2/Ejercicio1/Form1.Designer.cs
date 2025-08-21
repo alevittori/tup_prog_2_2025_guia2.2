@@ -51,6 +51,7 @@
             this.btnResultados.TabIndex = 1;
             this.btnResultados.Text = "Resultados";
             this.btnResultados.UseVisualStyleBackColor = true;
+            this.btnResultados.Click += new System.EventHandler(this.btnResultados_Click);
             // 
             // bntListarContactables
             // 
@@ -76,9 +77,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+    
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnResultados;
         private System.Windows.Forms.Button bntListarContactables;

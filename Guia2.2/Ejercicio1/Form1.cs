@@ -38,7 +38,7 @@ namespace Ejercicio1
 
                 if (VRegistrar.cbContactable.Checked) { unaEncuesta.Email = VRegistrar.tbEmail.Text;}
 
-                encuestador.RegistrarEcuentas(unaEncuesta, VRegistrar.cbContactable.Checked);
+                encuestador.RegistrarEncuesta(unaEncuesta, VRegistrar.cbContactable.Checked);
 
                VRegistrar.Dispose();
             }
@@ -55,15 +55,30 @@ namespace Ejercicio1
             VInforme.lboxInforme.Items.Clear();
 
 
-            encuestador.OrdenarEncuestables(); //ordenamos 
+            encuestador.OrdenarContactablesPorDistancia(); //ordenamos 
             for (int i = 0; i < encuestador.CantContactables; i++)
             {
-                VInforme.lboxInforme.Items.Add(encuestador.VerContactable(i)); // se va a llenar de objetos el list box, faltaria un ver detalles por encuesta
+                VInforme.lboxInforme.Items.Add(encuestador.VerContactable(i).VerEncuesta()); // se va a llenar de objetos el list box, faltaria un ver detalles por encuesta
             }
 
             VInforme.ShowDialog();
 
             VInforme.Dispose();  
+        }
+
+        private void btnResultados_Click(object sender, EventArgs e)
+        {
+            FInforme VResumen = new FInforme();
+
+            VResumen.lboxInforme.Items.Clear ();
+            VResumen.lboxInforme.Items.Add("Resumen de las Encuestas");
+            VResumen.lboxInforme.Items.Add("------------------------");
+            VResumen.lboxInforme.Items.Add($"Uso Bicicleta : {encuestador.PorcBicicleta}%");
+            VResumen.lboxInforme.Items.Add($"Uso Automovil : {encuestador.PorcAuto}%");
+            VResumen.lboxInforme.Items.Add($"Uso Transporte Publico : {encuestador.PorcTrasporteP}%");
+            VResumen.lboxInforme.Items.Add("------------------------");
+
+            VResumen.ShowDialog();
         }
     }
 }

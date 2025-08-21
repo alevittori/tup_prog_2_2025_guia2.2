@@ -16,5 +16,10 @@ namespace Ejercicio1.Models
 
         public bool EsContactable { get; set; }
 
+        public string VerEncuesta()
+        {
+            return $"Email: {Email} - Distancia Recorrida: {DistanciaASuDestino}";
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,61 +9,52 @@ namespace Ejercicio1.Models
 {
     internal class ProcesoEncuestas
     {
-        public int CantContactables { get; private set; }
-        public double PorcBicicleta { 
-            
-            get
-            { 
-                if(contactables.Count > 0)
-                {
-                    return PorcBicicleta / contactables.Count; 
-
-                }
-                return 0;
-
-            } 
-            private set { } }
-        public double PorcAuto { get { if (contactables.Count > 0) { return PorcAuto / contactables.Count; } return 0;  } private set { } }
-        public double PorcTrasporteP { get { if (contactables.Count > 0) { return PorcTrasporteP / contactables.Count; } return  0; } private set { }}
+        int _cantBici = 0, _cantAuto = 0, _cantTp = 0;
+       // int _cantContactables = 0;
+        public int CantContactables => contactables.Count; // Si bien get { return contactables.Count; } es totalmente válido, la sintaxis de expresión de cuerpo (=>) es la convención moderna de C# para propiedades de una sola línea, lo que hace el código más conciso.
+        public double PorcBicicleta => contactables.Count > 0 ? ((double)_cantBici / contactables.Count) * 100 : 0; 
+        public double PorcAuto { get { if (contactables.Count > 0) { return ((double)_cantAuto / contactables.Count) * 100; } return 0; } }
+        public double PorcTrasporteP { get { if (contactables.Count > 0) { return ((double)_cantTp / contactables.Count) * 100; } return 0; }  } 
 
         List<Encuesta> contactables = new List<Encuesta>();
 
 
 
-        public void RegistrarEcuentas( Encuesta unaEncuesta , bool puedeSerContactado) {
+        public void RegistrarEncuesta( Encuesta unaEncuesta , bool puedeSerContactado) {
+
+            if (unaEncuesta.UsaBicicleta) _cantBici++;
+            if (unaEncuesta.UsaAuto) _cantAuto++;
+            if (unaEncuesta.UsaTransportePublico) _cantTp++;
 
 
-
-
-            if (unaEncuesta.UsaBicicleta) PorcBicicleta++;
-            if (unaEncuesta.UsaAuto) PorcAuto++;
-            if (unaEncuesta.UsaTransportePublico) PorcTrasporteP++;
-
-
-            if (puedeSerContactado) // segun entiendo, solo agregamos a la lista lo que son contactables
+            if (puedeSerContactado) 
             {
-
-                CantContactables++;
+                unaEncuesta.EsContactable = true;  
+                //_cantContactables++;
                 contactables.Add(unaEncuesta);
+            }else 
+            { 
+                unaEncuesta.EsContactable = false;
+
             }
+               
+                
 
 
         }
 
         public Encuesta VerContactable ( int index) { 
             
-            if((index >= 0) && (index < contactables.Count))
-            {
-                
-                return contactables[index];
-            }
+            if((index >= 0) && (index < contactables.Count)) { return contactables[index]; }
 
-            return null; }
+            return null; 
+
+        }
         
-        public void OrdenarEncuestables () {
-            //aca hay que ordenar segun los km registrados
+        public void OrdenarContactablesPorDistancia () {
+            //aca hay que ordenar segun los km registrados y que sean contactables?
 
-            contactables.Sort();
+            contactables.Sort((e1,e2)=> e1.DistanciaASuDestino.CompareTo(e2.DistanciaASuDestino));
         
         }
 
