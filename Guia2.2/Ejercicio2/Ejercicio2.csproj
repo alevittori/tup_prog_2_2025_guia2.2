@@ -69,6 +69,12 @@
     <Compile Include="Models\Moto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FConsesionaria.resx">
+      <DependentUpon>FConsesionaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FIngresoEmbarque.resx">
+      <DependentUpon>FIngresoEmbarque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
