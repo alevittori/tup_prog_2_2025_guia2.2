@@ -11,7 +11,7 @@ namespace Ejercicio2.Models
         public double PorcentajeDepreciacion { get; }
         public int AñoActual {  get; }
         public double ImporteEnEmbarque { get; }
-        public  double CantidadEmbarques { get; }
+        public  int CantidadEmbarques { get; private set; }
         public Embarque MayorCantidadMotos { get; }
 
 
@@ -19,10 +19,35 @@ namespace Ejercicio2.Models
 
         public Concesionaria(int añoActual) { }
 
-        public void IngresarEmbarque(Embarque nuevo) { }
-        public Embarque VerEmbarque(int idx) {  return null; }
-        public Embarque VerEmbarquePorNumero( int numero ) { return null; }
-        public Embarque[] ListaOrdenadaEmbarques() { return null; }
+        public void IngresarEmbarque(Embarque nuevo) {
+            embarques[CantidadEmbarques] = nuevo;
+            CantidadEmbarques++;
+        }
+        public Embarque VerEmbarque(int idx) 
+        {
+            if (idx >= 0 && idx < embarques.Length)
+            {
+                return embarques[idx];
+            }
+            return null; 
+        
+        }
+        public Embarque VerEmbarquePorNumero( int numero )
+        {
+            foreach (Embarque e in embarques)
+            {
+                if (e.Numero == numero) { return e; }
+            }
+            return null; 
+        }
+        public Embarque[] ListaOrdenadaEmbarques()
+
+        {
+            //Embarque[] embarqueOrdenado;
+            Array.Sort(embarques);
+            return embarques; 
+        
+        }
 
 
     }
