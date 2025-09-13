@@ -28,125 +28,141 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAltaEmbarque = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnTodosLosEmbarques = new System.Windows.Forms.Button();
+            this.btnEmbarqueMayor = new System.Windows.Forms.Button();
+            this.btnResumenDelDia = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarEmbarque = new System.Windows.Forms.Button();
+            this.tbNumEmbarque = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAltaEmbarque
             // 
-            this.button1.Location = new System.Drawing.Point(300, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 51);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Alta Embarque";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAltaEmbarque.Location = new System.Drawing.Point(400, 15);
+            this.btnAltaEmbarque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAltaEmbarque.Name = "btnAltaEmbarque";
+            this.btnAltaEmbarque.Size = new System.Drawing.Size(251, 63);
+            this.btnAltaEmbarque.TabIndex = 0;
+            this.btnAltaEmbarque.Text = "Alta Embarque";
+            this.btnAltaEmbarque.UseVisualStyleBackColor = true;
+            this.btnAltaEmbarque.Click += new System.EventHandler(this.btnAltaEmbarque_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnTodosLosEmbarques);
+            this.groupBox1.Controls.Add(this.btnEmbarqueMayor);
+            this.groupBox1.Controls.Add(this.btnResumenDelDia);
             this.groupBox1.Controls.Add(this.listBox1);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(13, 77);
+            this.groupBox1.Location = new System.Drawing.Point(17, 95);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(779, 366);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1039, 450);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informe";
             // 
-            // groupBox2
+            // btnTodosLosEmbarques
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 21);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(757, 114);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Ver Embarque";
+            this.btnTodosLosEmbarques.Location = new System.Drawing.Point(892, 343);
+            this.btnTodosLosEmbarques.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTodosLosEmbarques.Name = "btnTodosLosEmbarques";
+            this.btnTodosLosEmbarques.Size = new System.Drawing.Size(96, 55);
+            this.btnTodosLosEmbarques.TabIndex = 4;
+            this.btnTodosLosEmbarques.Text = "Todos los embarque";
+            this.btnTodosLosEmbarques.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // btnEmbarqueMayor
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Numero de embarque";
+            this.btnEmbarqueMayor.Location = new System.Drawing.Point(892, 265);
+            this.btnEmbarqueMayor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEmbarqueMayor.Name = "btnEmbarqueMayor";
+            this.btnEmbarqueMayor.Size = new System.Drawing.Size(96, 55);
+            this.btnEmbarqueMayor.TabIndex = 3;
+            this.btnEmbarqueMayor.Text = "Embarque Mayor";
+            this.btnEmbarqueMayor.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // btnResumenDelDia
             // 
-            this.textBox1.Location = new System.Drawing.Point(196, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(533, 45);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 32);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Buscar Embarque";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnResumenDelDia.Location = new System.Drawing.Point(892, 190);
+            this.btnResumenDelDia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnResumenDelDia.Name = "btnResumenDelDia";
+            this.btnResumenDelDia.Size = new System.Drawing.Size(96, 55);
+            this.btnResumenDelDia.TabIndex = 2;
+            this.btnResumenDelDia.Text = "Resumen del dia";
+            this.btnResumenDelDia.UseVisualStyleBackColor = true;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(13, 144);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(17, 177);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(635, 212);
+            this.listBox1.Size = new System.Drawing.Size(845, 260);
             this.listBox1.TabIndex = 1;
             // 
-            // button3
+            // groupBox2
             // 
-            this.button3.Location = new System.Drawing.Point(669, 154);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(72, 45);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Resumen del dia";
-            this.button3.UseVisualStyleBackColor = true;
+            this.groupBox2.Controls.Add(this.btnBuscarEmbarque);
+            this.groupBox2.Controls.Add(this.tbNumEmbarque);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(16, 26);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(1009, 140);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Ver Embarque";
             // 
-            // button4
+            // btnBuscarEmbarque
             // 
-            this.button4.Location = new System.Drawing.Point(669, 215);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(72, 45);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Embarque Mayor";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnBuscarEmbarque.Location = new System.Drawing.Point(711, 55);
+            this.btnBuscarEmbarque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarEmbarque.Name = "btnBuscarEmbarque";
+            this.btnBuscarEmbarque.Size = new System.Drawing.Size(228, 39);
+            this.btnBuscarEmbarque.TabIndex = 2;
+            this.btnBuscarEmbarque.Text = "Buscar Embarque";
+            this.btnBuscarEmbarque.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // tbNumEmbarque
             // 
-            this.button5.Location = new System.Drawing.Point(669, 279);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(72, 45);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Todos los embarque";
-            this.button5.UseVisualStyleBackColor = true;
+            this.tbNumEmbarque.Location = new System.Drawing.Point(261, 64);
+            this.tbNumEmbarque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNumEmbarque.Name = "tbNumEmbarque";
+            this.tbNumEmbarque.Size = new System.Drawing.Size(227, 22);
+            this.tbNumEmbarque.TabIndex = 1;
+            this.tbNumEmbarque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNumEmbarque_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(73, 68);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Numero de embarque";
             // 
             // FConsesionaria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAltaEmbarque);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FConsesionaria";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FConsesionaria";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -157,15 +173,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAltaEmbarque;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnTodosLosEmbarques;
+        private System.Windows.Forms.Button btnEmbarqueMayor;
+        private System.Windows.Forms.Button btnResumenDelDia;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnBuscarEmbarque;
+        private System.Windows.Forms.TextBox tbNumEmbarque;
     }
 }

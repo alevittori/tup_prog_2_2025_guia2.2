@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio2.Models
 {
-    internal class Embarque
+    public class Embarque
     {
         double porcDepreciacionUsado;
         int añoEvaluacion;
@@ -32,7 +32,15 @@ namespace Ejercicio2.Models
             
         public double PromedioCosto
         {
-            get { return MontoTotal / CantidadMotos; }
+            get 
+            { 
+                if(CantidadMotos > 0)
+                {
+                    return MontoTotal / CantidadMotos;
+
+                }
+                return 0;
+            }
         }
         public double AntiguedadPromedio 
         {
@@ -48,23 +56,21 @@ namespace Ejercicio2.Models
             } 
         }
 
-        public Embarque(int numero, double porcDepreciacion, int añoEvaluacion) 
+        public Embarque(int numero, int añoEvaluacion /* , double porcDepreciacion*/)  
         {
             listaMotos = new List<Moto>();
             this.añoEvaluacion = añoEvaluacion;
-            this.Numero = numero;
-            this.porcDepreciacionUsado = porcDepreciacion;
+            Numero = numero;
+            //porcDepreciacionUsado = porcDepreciacion;
 
         }
 
-        public double RegistrarMoto(int añosFabricacion, double montoFabricacion) 
+        public void RegistrarMoto(int añosFabricacion, double montoFabricacion) 
         {
 
             listaMotos.Add(new Moto(añosFabricacion, montoFabricacion));
 
             
-            return 0;
-        
         }
 
     }

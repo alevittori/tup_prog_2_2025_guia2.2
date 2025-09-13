@@ -21,7 +21,7 @@ namespace Ejercicio2.Models
 
         public int CalculaAntiguedad(int añoActual)
         {
-            Antiguedad = añoActual - Modelo;
+            Antiguedad= añoActual - Modelo;
             return Antiguedad;
         }
         public double CalcularValorActual(int añoActual)

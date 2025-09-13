@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tbAnioActual = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -40,56 +40,67 @@
             // 
             this.groupBox1.Controls.Add(this.tbAnioActual);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(22, 24);
+            this.groupBox1.Location = new System.Drawing.Point(29, 30);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(282, 132);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(376, 162);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inicio del Sistema";
             // 
+            // tbAnioActual
+            // 
+            this.tbAnioActual.Location = new System.Drawing.Point(147, 82);
+            this.tbAnioActual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbAnioActual.Name = "tbAnioActual";
+            this.tbAnioActual.Size = new System.Drawing.Size(156, 22);
+            this.tbAnioActual.TabIndex = 1;
+            this.tbAnioActual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAnioActual_KeyPress);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 70);
+            this.label1.Location = new System.Drawing.Point(33, 86);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Año actual";
             // 
-            // tbAnioActual
-            // 
-            this.tbAnioActual.Location = new System.Drawing.Point(110, 67);
-            this.tbAnioActual.Name = "tbAnioActual";
-            this.tbAnioActual.Size = new System.Drawing.Size(118, 20);
-            this.tbAnioActual.TabIndex = 1;
-            // 
             // btnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(25, 167);
+            this.btnIniciar.Location = new System.Drawing.Point(33, 206);
+            this.btnIniciar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(114, 46);
+            this.btnIniciar.Size = new System.Drawing.Size(152, 57);
             this.btnIniciar.TabIndex = 1;
             this.btnIniciar.Text = "Inicar";
             this.btnIniciar.UseVisualStyleBackColor = true;
+            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(190, 167);
+            this.btnSalir.Location = new System.Drawing.Point(253, 206);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(114, 46);
+            this.btnSalir.Size = new System.Drawing.Size(152, 57);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 236);
+            this.ClientSize = new System.Drawing.Size(439, 290);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciando el sistema";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio2.Models
 {
-    internal class Concesionaria
+    public class Concesionaria
     {
         public double PorcentajeDepreciacion { get; }
         public int AñoActual {  get; }
@@ -17,7 +17,12 @@ namespace Ejercicio2.Models
 
         Embarque[] embarques;
 
-        public Concesionaria(int añoActual) { }
+        public Concesionaria(int añoActual) 
+        { 
+            AñoActual = añoActual;
+            // iniciamos el vector embarque con un numero
+            embarques = new Embarque[100];
+        }
 
         public void IngresarEmbarque(Embarque nuevo) {
             embarques[CantidadEmbarques] = nuevo;
