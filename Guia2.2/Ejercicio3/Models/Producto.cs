@@ -29,8 +29,16 @@ namespace Ejercicio3.Models
         }
         public int ExtraerCantidad(int extraccion)
         {
-            if (extraccion < Cantidad) { return Cantidad - extraccion; }
+            if (extraccion < Cantidad) { 
+                Cantidad -= extraccion;
+                return Cantidad;
+            }
             return -1;
+        }
+
+        public override string ToString()
+        {
+            return $"{Codigo} - {Nombre} ";
         }
 
     }

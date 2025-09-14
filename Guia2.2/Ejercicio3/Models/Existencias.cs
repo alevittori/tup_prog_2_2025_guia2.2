@@ -14,8 +14,17 @@ namespace Ejercicio3.Models
 
         public Producto BuscarPorCodigo(int codigo)
         {
-            Producto aBuscar = productos.Find(p=>p.Codigo == codigo);
+            Producto aBuscar = productos.Find(p=>p.Codigo == codigo); // Find solo es para List<T>
             return aBuscar;
+
+            /* Sino se peude usar FirstOrDefault
+             * que esta disponible para cualquier que tenga IEnumerable<T>
+             * Retorna lo mismo que Find, el elemento o null
+             * Es un poco mas lento pero mas versatil
+             * sintaxis 
+             * productos.FirstOrDefault(p => p.Codigo == codigo);
+             * */
+
         }
 
         public Producto BuscarPorIndice(int idx)
@@ -37,11 +46,12 @@ namespace Ejercicio3.Models
             //primero controlar que no exista
             foreach (Producto p in productos)
             {
-                if(p.Nombre == nombre)
+                if(p.Nombre.ToUpper() == nombre.ToUpper())
                 {
                     p.AgregarCantidad( cantidad);
-                    return p;
+                    return null;
                 }
+                    
                 
                 
             }
@@ -53,10 +63,21 @@ namespace Ejercicio3.Models
 
         }
 
-        public bool QuitarProducto(int idx)
+        public Producto QuitarProductoPorIndice(int idx, out bool exito)
         {
             Producto aEliminar = BuscarPorIndice(idx);
-            if (aEliminar != null) { productos.Remove(aEliminar); return true; }
+            if (aEliminar != null) { productos.Remove(aEliminar); exito = true; return aEliminar; }
+            exito = false;
+            return null;
+        }
+
+        public bool EliminarProducto(Producto p)
+        {
+            if (p != null)
+            {
+                productos.Remove(p);
+                return true;
+            }
             return false;
         }
     }
